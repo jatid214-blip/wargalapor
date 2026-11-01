@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buat laporan warga dan pantau tindak lanjut masalah lingkungan secara transparan bersama WargaLapor.">
+    <meta name="theme-color" content="#10233f">
+    <title>Laporan Warga — WargaLapor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="report-dashboard-page">
+    <div class="report-utility">
+        <div class="report-shell utility-content">
+            <span><i class="fas fa-landmark"></i> Portal terpadu akuntabilitas &amp; analitik kebijakan publik Republik Indonesia</span>
+            <span class="utility-status"><i class="fas fa-circle"></i> Sistem pelayanan pengaduan nasional aktif <span class="utility-id">ID: RI-GOV-2025</span></span>
+        </div>
+    </div>
+
+    <nav class="navbar report-navbar" id="navbar" aria-label="Navigasi utama">
+        <div class="report-shell navbar-content">
+            <a href="index.html" class="navbar-brand" aria-label="WargaLapor — Beranda">
+                <div class="brand-icon"><i class="fas fa-shield-halved"></i></div>
+                <span class="home-brand-copy"><span class="brand-text">Warga<span class="brand-accent">Lapor</span></span><small>Suara Publik<br> Civic Platform</small></span>
+            </a>
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Beranda</a></li>
+                <li><a href="laporan.html" class="nav-link active" aria-current="page">Laporan</a></li>
+                <li><a href="#form" class="nav-link">Penanganan</a></li>
+                <li><a href="data-insight.html" class="nav-link">Analitik</a></li>
+                <li><a href="data-insight.html" class="nav-link">Transparansi APBD</a></li>
+            </ul>
+            <div class="navbar-actions report-nav-actions home-nav-actions">
+                <label class="home-region-control"><i class="fas fa-location-dot"></i><span><small>Wilayah pantauan</small><select aria-label="Pilih wilayah pantauan"><option>Provinsi DKI Jakarta</option><option>Jakarta Selatan</option><option>Jakarta Pusat</option><option>Jakarta Timur</option></select></span><i class="fas fa-chevron-down"></i></label>
+                <a class="report-emergency home-emergency" href="tel:112"><i class="fas fa-phone"></i><span>Call center 112<small>Pengaduan aktif</small></span></a>
+                <button class="home-notifications" type="button" aria-label="Notifikasi, 4 belum dibaca"><i class="far fa-bell"></i><span>4</span></button>
+                <button class="home-profile" type="button" aria-label="Profil Dr. R. Daniswara">
+                    <span class="profile-avatar"><i class="fas fa-user-tie"></i></span>
+                    <span><strong>Dr. R. Daniswara</strong><small>Analis Kebijakan &amp;<br>Perencana Kota</small></span>
+                    <i class="fas fa-chevron-down profile-chevron"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="report-overview">
+            <div class="report-shell">
+                <div class="overview-kicker"><span class="live-dot"></span> Kanal pelaporan berbasis SLA <span class="kicker-divider">|</span> Protokol terpadu v4.8</div>
+                <div class="overview-heading">
+                    <div>
+                        <h1>Suarakan Perubahan Nyata di Wilayah Anda</h1>
+                        <p>Laporan Anda diverifikasi berjenjang, dialokasikan otomatis ke dinas terkait via SLA terukur, dan diintegrasikan ke basis data kebijakan daerah.</p>
+                    </div>
+                    <div class="audit-badge"><i class="fas fa-tower-broadcast"></i><span>Audit keterbukaan<strong>ISO 37120 Municipal Data</strong></span></div>
+                </div>
+
+                <section class="report-metrics" aria-label="Ringkasan kinerja laporan">
+                    <article class="metric-card">
+                        <span class="metric-label">Terselesaikan</span>
+                        <strong>34.821</strong>
+                        <small class="metric-positive"><i class="fas fa-arrow-trend-up"></i> 94,2% tepat batas SLA</small>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Penanganan dinas</span>
+                        <strong>1.240</strong>
+                        <small class="metric-warning"><i class="fas fa-clock"></i> 22 OPD bertugas aktif</small>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Respon verifikasi</span>
+                        <strong>34 <small>menit</small></strong>
+                        <small class="metric-positive"><i class="fas fa-stopwatch"></i> 12 menit lebih cepat dari target</small>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Nilai efisiensi fiskal</span>
+                        <strong>Rp 4,8 M</strong>
+                        <small>Resolusi preventif warga</small>
+                    </article>
+                </section>
+            </div>
+        </header>
+
+        <section class="report-workspace report-shell" aria-label="Buat laporan dan pantau laporan warga">
+            <aside class="report-compose" id="form">
+                <div class="compose-heading">
+                    <div class="compose-title"><span class="compose-mark"><i class="fas fa-circle-plus"></i></span><h2>Buat Laporan Baru</h2></div>
+                    <span class="step-count">Langkah 1/3</span>
+                </div>
+                <div class="step-progress" aria-label="Langkah 1 dari 3"><span class="current"></span><span></span><span></span></div>
+                <form id="communityReportForm">
+                    <fieldset class="report-fieldset">
+                        <legend>1. Detail isu</legend>
+                        <label class="field-label">Pilih sektor pengaduan <span>Wajib dipilih</span></label>
+                        <div class="sector-grid">
+                            <button type="button" class="sector-option selected" data-category="infrastruktur" aria-pressed="true"><i class="fas fa-road"></i> Infrastruktur</button>
+                            <button type="button" class="sector-option" data-category="lingkungan" aria-pressed="false"><i class="fas fa-leaf"></i> Lingkungan</button>
+                            <button type="button" class="sector-option" data-category="tata-kelola" aria-pressed="false"><i class="fas fa-scale-balanced"></i> Tata Kelola</button>
+                            <button type="button" class="sector-option" data-category="kesehatan" aria-pressed="false"><i class="fas fa-kit-medical"></i> Kesehatan</button>
+                        </div>
+                        <input type="hidden" id="reportCategory" value="infrastruktur">
+
+                        <label class="field-label" for="reportTitle">Ringkasan / Judul laporan</label>
+                        <input class="report-input" id="reportTitle" name="title" type="text" maxlength="120" placeholder="Contoh: Jalan berlubang di Jl. Fatmawati" required>
+
+                        <div class="field-label-row"><label class="field-label" for="reportDesc">Deskripsi kejadian &amp; dampak</label><span id="descriptionCount">0 / 500 karakter</span></div>
+                        <textarea class="report-input report-textarea" id="reportDesc" name="description" maxlength="500" placeholder="Jelaskan masalah secara detail, kapan terjadi, dan dampaknya bagi warga..." required></textarea>
+
+                        <div class="field-label-row location-label">
+                            <label class="field-label" for="reportLocation"><i class="fas fa-location-dot"></i> Titik lokasi &amp; koordinat</label>
+                            <button type="button" class="text-action" id="locateReport"><i class="fas fa-crosshairs"></i> Gunakan GPS presisi</button>
+                        </div>
+                        <input class="report-input" id="reportLocation" name="location" type="text" placeholder="Alamat atau nama wilayah" required>
+                        <div class="mini-map" aria-label="Pratinjau peta lokasi laporan">
+                            <svg viewBox="0 0 640 190" role="img" aria-label="Peta jalan kawasan Jakarta Selatan">
+                                <rect width="640" height="190" fill="#dce8e7"/>
+                                <path class="map-water" d="M0 24 118 0h58l-34 51-85 43L0 83zm500 190 44-50 96-18v68z"/>
+                                <g class="map-blocks">
+                                    <path d="m55 19 70-12-20 50-73 26zM171 16l77-13-7 58-73 8zm104 2 93-15-20 56-75 7zm120-3 87 2-23 54-82-9zM35 105l70-30 20 60-72 25zm105-18 83-20 13 61-89 16zm117-15 93-10-12 66-77 1zm117 4 90 5-18 56-84-5zM198 151l91-14-2 45-99 4zm119-8 92-4 3 48-97-9zm116-2 82-15 26 47-105 14z"/>
+                                </g>
+                                <g class="map-roads">
+                                    <path d="M-20 140 660 28M78-15l133 220M366-20 247 215M-10 62l670 75M-10 179 500-10M535-10 420 205"/>
+                                    <path class="map-main-road" d="M-10 108 650 94M303-10l26 220"/>
+                                </g>
+                            </svg>
+                            <span class="map-label map-label-one">Jl. Fatmawati</span><span class="map-label map-label-two">Cilandak</span>
+                            <button class="map-pin" type="button" aria-label="Titik lokasi laporan"><i class="fas fa-location-dot"></i></button>
+                            <span class="map-coordinates" id="reportCoordinates">-6.2841, 106.7972</span>
+                        </div>
+
+                        <label class="field-label evidence-label" for="reportEvidence">Bukti dokumentasi visual (foto)</label>
+                        <label class="evidence-upload" for="reportEvidence">
+                            <i class="fas fa-camera"></i><span id="evidenceLabel">Unggah bukti</span><small>JPG, PNG maks. 10 MB</small>
+                        </label>
+                        <input class="visually-hidden" type="file" id="reportEvidence" accept="image/*" multiple>
+
+                        <span class="field-label privacy-label">Tingkat visibilitas &amp; privasi pengadu</span>
+                        <label class="privacy-choice selected"><input type="radio" name="reportPrivacy" value="public" checked><span class="privacy-icon"><i class="fas fa-earth-asia"></i></span><span><strong>Publik &amp; terbuka</strong><small>Dukung upaya warga aktif di feed terbuka</small></span><span class="privacy-radio"></span></label>
+                        <label class="privacy-choice"><input type="radio" name="reportPrivacy" value="community"><span class="privacy-icon"><i class="fas fa-user-group"></i></span><span><strong>Anonim komunitas</strong><small>Identitas disamarkan dari feed, data tetap dijaga</small></span><span class="privacy-radio"></span></label>
+                        <label class="privacy-choice"><input type="radio" name="reportPrivacy" value="private"><span class="privacy-icon"><i class="fas fa-lock"></i></span><span><strong>Whistleblower terenkripsi</strong><small>Hanya dapat diakses oleh Inspektorat Wilayah</small></span><span class="privacy-radio"></span></label>
+                    </fieldset>
+
+                    <div class="clustering-note"><i class="fas fa-circle-nodes"></i><div><strong>AI clustering terdeteksi</strong><p>Sistem mendeteksi 2 laporan serupa dalam radius 250 m. Klik untuk menggabungkan dukungan dan mempercepat respons.</p><button type="button" id="mergeReports">Tinjau &amp; gabungkan laporan <i class="fas fa-arrow-right"></i></button></div></div>
+                    <button class="submit-report" type="submit"><i class="fas fa-paper-plane"></i> Kirim laporan resmi <span>(terhubung ke SLA 112)</span></button>
+                    <p class="form-legal"><i class="fas fa-shield-halved"></i> Dilindungi UU ITE &amp; Sistem Pelayanan Pengaduan SP4N LAPOR!</p>
+                </form>
+            </aside>
+
+            <div class="report-feed-column" id="report-feed">
+                <div class="feed-controls">
+                    <label class="feed-search"><i class="fas fa-magnifying-glass"></i><input id="reportSearch" type="search" placeholder="Cari nomor tiket, nama jalan, atau isu dinas..." aria-label="Cari laporan"></label>
+                    <button class="feed-view-button active" type="button"><i class="fas fa-list"></i> Feed daftar</button>
+                    <button class="feed-view-button" type="button" id="agglomerationButton"><i class="fas fa-map"></i> Peta aglomerasi</button>
+                    <div class="filter-row" role="group" aria-label="Filter status laporan">
+                        <button class="status-filter active" type="button" data-status="all">Semua status (4.120)</button>
+                        <button class="status-filter" type="button" data-status="verified"><i class="fas fa-circle"></i> Diverifikasi (320)</button>
+                        <button class="status-filter" type="button" data-status="process"><i class="fas fa-circle"></i> Dalam penanganan (1.240)</button>
+                        <button class="status-filter" type="button" data-status="urgent"><i class="fas fa-circle"></i> Prioritas SLA &lt; 24 jam</button>
+                        <span class="feed-sort"><i class="fas fa-arrow-down-wide-short"></i></span>
+                    </div>
+                </div>
+
+                <section class="issue-map-card">
+                    <div class="feed-section-title"><h2><i class="fas fa-compass"></i> Sebaran spasial isu aktif</h2><span class="sync-badge">Live sensor sync</span></div>
+                    <div class="issue-map" role="img" aria-label="Peta sebaran laporan aktif di Jakarta Selatan">
+                        <div class="map-grid-lines"></div><span class="map-street street-a">Jl. Jend. Sudirman</span><span class="map-street street-b">Jl. Gatot Subroto</span><span class="map-street street-c">Jl. Rasuna Said</span><span class="map-street street-d">Jl. HR Rasuna Said</span>
+                        <span class="district-label district-one">South Jakarta</span><span class="district-label district-two">Tebet Eco Park</span><span class="district-label district-three">Kuningan</span>
+                        <span class="issue-marker marker-red marker-one">8</span><span class="issue-marker marker-teal marker-two">14</span><span class="issue-marker marker-orange marker-three">3</span><span class="issue-marker marker-blue marker-four"><i class="fas fa-location-dot"></i></span>
+                        <div class="map-legend"><span><i class="legend-red"></i> Gawat darurat / lubang jalan</span><span><i class="legend-teal"></i> Tuntaskan SLA</span><span><i class="legend-orange"></i> Investigasi pengawasan</span></div>
+                    </div>
+                </section>
+
+                <article class="feed-report report-urgent" data-category="infrastruktur" data-status="urgent">
+                    <div class="report-card-top"><div><span class="ticket-id">#WJKT-2025-0982</span><span class="priority-pill"><i class="fas fa-triangle-exclamation"></i> Urgensi tinggi · Infrastruktur</span><span class="department-pill">Dinas Bina Marga</span></div><span class="sla-pill"><i class="fas fa-stopwatch"></i> SLA: tersisa 1 hari 4 jam</span></div>
+                    <h3>Lubang Aspal Sedalam 15 cm Membahayakan Pengendara Roda Dua</h3>
+                    <p class="report-location"><i class="fas fa-location-dot"></i> Jl. TB Simatupang Kav. 18, Pasar Minggu <span>•</span> Diposting 2 jam lalu oleh Budi Santoso (Warga Terverifikasi)</p>
+                    <p class="report-description">Lubang tepat berada di lajur cepat sebelah kiri setelah flyover arah pusat kota. Sudah memicu kecelakaan motor tadi pagi. Memerlukan penambalan aspal dingin darurat segera.</p>
+                    <figure class="report-evidence-photo"><img src="assets/img/report-1.jpg" alt="Jalan perkotaan di Jakarta, foto ilustrasi dan bukan bukti laporan"><figcaption>Foto ilustrasi jalan perkotaan — bukan bukti foto laporan ini.</figcaption></figure>
+                    <div class="merge-banner"><span><i class="fas fa-layer-group"></i></span><p><strong>Merge Issue: 5 laporan serupa digabungkan</strong><br>Laporan dari 5 warga sekitar telah dikonsolidasi ke dalam berkas docket utama untuk mempercepat alokasi armada tambal cepat UPT Bina Marga Jakarta Selatan.</p></div>
+                    <div class="progress-label"><strong>Progres penanganan dinas</strong><span>65%</span></div><div class="report-progress"><span style="width:65%"></span></div>
+                    <div class="progress-stages"><span>SLA Diajukan</span><span>Terverifikasi</span><span>Dinas Bina Marga</span><span>Pengerjaan fisik</span></div>
+                    <div class="report-card-actions"><button type="button" class="support-button" data-count="342"><i class="fas fa-thumbs-up"></i> <span>342</span> warga mendukung</button><button type="button" class="comment-button"><i class="far fa-comment"></i> 28 tanggapan</button><button type="button" class="share-button" aria-label="Bagikan laporan"><i class="fas fa-share-nodes"></i></button></div>
+                </article>
+
+                <article class="feed-report report-complete" data-category="lingkungan" data-status="verified">
+                    <div class="report-card-top"><div><span class="ticket-id">#WJKT-2025-0811</span><span class="complete-pill"><i class="fas fa-circle-check"></i> Pekerjaan selesai &amp; terverifikasi publik</span><span class="department-pill">Dinas Lingkungan Hidup</span></div><span class="complete-sla">Selesai dalam 48 jam (SLA dipenuhi)</span></div>
+                    <h3>Pembersihan Timbunan Sampah Liar &amp; Pemasangan Kontainer Resmi</h3>
+                    <p class="report-location"><i class="fas fa-location-dot"></i> Bantaran Saluran Penghubung, Gandaria Selatan <span>•</span> Diselesaikan kemarin pukul 16.30 WIB</p>
+                    <div class="before-after"><figure class="evidence-scene scene-before"><img src="assets/img/report-2.jpg" alt="Burung air dan sampah terapung di perairan Teluk Jakarta, foto ilustrasi"><figcaption>Teluk Jakarta · foto ilustrasi</figcaption></figure><figure class="evidence-scene scene-after"><img src="assets/img/report-4.jpg" alt="Saluran Banjir Timur yang bersih di Jakarta, foto ilustrasi"><figcaption>Saluran Banjir Timur · foto ilustrasi</figcaption></figure></div>
+                    <div class="validation-banner"><i class="fas fa-clipboard-check"></i><p><strong>Validasi oleh Pengawas Wilayah DLH</strong><br>1,2 ton sampah diangkut ke Bantargebang. Kontainer dijadwalkan rutin tiap pagi.</p><a href="#report-feed">Unduh berita acara (PDF)</a></div>
+                    <div class="report-card-actions"><button type="button" class="support-button" data-count="189"><i class="fas fa-thumbs-up"></i> <span>189</span> didukung</button><button type="button" class="comment-button"><i class="far fa-comment"></i> 14 ulasan warga</button><span class="closed-note"><i class="fas fa-lock"></i> Kasus ditutup resmi</span></div>
+                </article>
+
+                <article class="feed-report report-investigation" data-category="tata-kelola" data-status="process">
+                    <div class="report-card-top"><div><span class="ticket-id">#WJKT-2025-0754</span><span class="investigation-pill"><i class="fas fa-magnifying-glass"></i> Investigasi lapangan</span><span class="department-pill">Inspektorat / Dishub</span></div><span class="anonymous-pill"><i class="fas fa-user-secret"></i> Laporan anonim terverifikasi</span></div>
+                    <h3>Pungutan Liar Parkir Menggunakan Karcis Palsu di Trotoar Kawasan RTH</h3>
+                    <p class="report-location"><i class="fas fa-location-dot"></i> Jl. Radio Dalam Raya, Kebayoran Baru <span>•</span> Sedang ditangani Tim Terpadu Saber Pungli</p>
+                    <p class="report-description">Oknum mengenakan tarif parkir tanpa karcis resmi serta menutup hak pejalan kaki di trotoar disabilitas.</p>
+                    <div class="report-card-actions"><button type="button" class="support-button" data-count="97"><i class="fas fa-thumbs-up"></i> <span>97</span> didukung</button><button type="button" class="comment-button"><i class="far fa-comment"></i> 19 catatan saksi</button><a class="follow-link" href="#form">Ikuti perkembangan kasus <i class="fas fa-arrow-right"></i></a></div>
+                </article>
+                <button class="load-more-reports" id="loadMoreReports" type="button"><i class="fas fa-chevron-down"></i> Tampilkan laporan komunitas lainnya</button>
+                <p class="empty-reports" id="emptyReports" hidden>Tidak ada laporan yang cocok dengan pencarian atau filter ini.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="report-footer"><div class="report-shell"><a href="index.html" class="navbar-brand"><div class="brand-icon"><i class="fas fa-shield-halved"></i></div><span class="brand-text">Warga<span class="brand-accent">Lapor</span></span></a><p>&copy; 2026 WargaLapor. Ruang aman untuk perubahan di lingkungan Anda.</p><a href="index.html">Kembali ke beranda <i class="fas fa-arrow-right"></i></a><p class="photo-credits">Foto ilustrasi — bukan bukti kasus: <a href="https://commons.wikimedia.org/wiki/File:Jakarta_Outer_Ring_Road_street.jpg" target="_blank" rel="noopener noreferrer">Exynoss78739, Jalan Lingkar Luar Jakarta</a> (CC BY 4.0); <a href="https://commons.wikimedia.org/wiki/File:Bangau_di_Teluk_Jakarta.jpg" target="_blank" rel="noopener noreferrer">Arie Basuki, Bangau di Teluk Jakarta</a> (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Jakarta_Car_Free_Day.jpg" target="_blank" rel="noopener noreferrer">Gunawan Kartapranata, Jakarta Car Free Day</a> (CC BY-SA 3.0); <a href="https://commons.wikimedia.org/wiki/File:Jakarta_East_Flood_Canal,_Cipinang_Muara_Section,_June_2024.jpg" target="_blank" rel="noopener noreferrer">Irvan Ary Maulana, Kanal Banjir Timur</a> (CC BY-SA 4.0).</p></div></footer>
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

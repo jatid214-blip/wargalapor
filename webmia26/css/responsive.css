@@ -1,0 +1,375 @@
+/* ========================================
+   WargaLapor — Responsive Styles
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    :root {
+        --section-padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .map-container {
+        grid-template-columns: 1fr;
+    }
+
+    .map-sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .map-legend, .map-stats-sidebar {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-sidebar-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: static;
+    }
+
+    .info-card {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .insight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .full-map-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 48px 0;
+        --navbar-height: 64px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    /* Navbar mobile */
+    .navbar-menu {
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 16px;
+        gap: 4px;
+        border-bottom: 1px solid var(--gray-200);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .navbar-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 12px 16px;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .navbar-actions .btn {
+        display: none;
+    }
+
+    /* Hero mobile */
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        padding: 40px 0 80px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .search-box i {
+        display: none;
+    }
+
+    .search-box input {
+        width: 100%;
+        text-align: center;
+    }
+
+    .search-box .btn {
+        width: 100%;
+    }
+
+    .hero-categories {
+        gap: 6px;
+    }
+
+    .category-chip {
+        font-size: 0.78rem;
+        padding: 6px 12px;
+    }
+
+    /* Process mobile */
+    .process-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Stats mobile */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.78rem;
+    }
+
+    /* Feed mobile */
+    .feed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feed-filters {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        font-size: 0.78rem;
+        padding: 6px 14px;
+    }
+
+    /* Form mobile */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .report-form {
+        padding: 20px;
+    }
+
+    .form-sidebar-info {
+        flex-direction: column;
+    }
+
+    /* Map mobile */
+    .map-sidebar {
+        flex-direction: column;
+    }
+
+    .map-placeholder {
+        min-height: 300px;
+    }
+
+    /* Donut chart mobile */
+    .donut-chart-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Footer mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    /* CTA mobile */
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Page header mobile */
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Report list mobile */
+    .report-item {
+        grid-template-columns: 1fr;
+    }
+
+    .report-item-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    .report-item-status {
+        text-align: left;
+    }
+
+    .report-toolbar {
+        flex-direction: column;
+    }
+
+    .report-search {
+        max-width: 100%;
+    }
+
+    /* Dashboard mobile */
+    .dashboard-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .dashboard-card.half-width {
+        grid-column: span 1;
+    }
+
+    /* Team mobile */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    /* Timeline mobile */
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        flex-direction: row;
+        padding-right: 0;
+        padding-left: 50px;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+
+    /* Section header mobile */
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-desc {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 20px 12px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pillar-card {
+        padding: 24px 20px;
+    }
+
+    .bar-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bar-label {
+        width: auto;
+    }
+
+    .bar-wrapper {
+        width: 100%;
+    }
+}

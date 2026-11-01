@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analitik Wilayah — WargaLapor</title>
+    <meta name="description" content="Dasbor pemantauan spasial dan analitik kebijakan wilayah WargaLapor.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/analytics.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="analytics-page">
+    <div class="report-utility">
+        <div class="report-shell utility-content">
+            <span><i class="fas fa-landmark"></i> Portal terpadu akuntabilitas &amp; analitik kebijakan publik Republik Indonesia</span>
+            <span class="utility-status"><i class="fas fa-circle"></i> Sistem pelayanan pengaduan nasional aktif <span class="utility-id">ID: RI-GOV-2025</span></span>
+        </div>
+    </div>
+    <nav class="navbar report-navbar" id="navbar" aria-label="Navigasi utama">
+        <div class="report-shell navbar-content">
+            <a href="index.html" class="navbar-brand" aria-label="WargaLapor — Beranda">
+                <div class="brand-icon"><i class="fas fa-shield-halved"></i></div>
+                <span class="home-brand-copy"><span class="brand-text">Warga<span class="brand-accent">Lapor</span></span><small>Suara Publik<br> Civic Platform</small></span>
+            </a>
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Beranda</a></li>
+                <li><a href="laporan.html" class="nav-link">Laporan</a></li>
+                <li><a href="laporan.html#form" class="nav-link">Penanganan</a></li>
+                <li><a href="data-insight.html" class="nav-link active" aria-current="page">Analitik</a></li>
+                <li><a href="data-insight.html" class="nav-link">Transparansi APBD</a></li>
+            </ul>
+            <div class="navbar-actions home-nav-actions report-nav-actions">
+                <label class="home-region-control"><i class="fas fa-location-dot"></i><span><small>Wilayah pantauan</small><select aria-label="Pilih wilayah pantauan"><option>Provinsi DKI Jakarta</option><option>Jakarta Selatan</option><option>Jakarta Pusat</option><option>Jakarta Timur</option></select></span><i class="fas fa-chevron-down"></i></label>
+                <a class="report-emergency home-emergency" href="tel:112"><i class="fas fa-phone"></i><span>Call center 112<small>Pengaduan aktif</small></span></a>
+                <button class="home-notifications" type="button" aria-label="Notifikasi, 4 belum dibaca"><i class="far fa-bell"></i><span>4</span></button>
+                <button class="home-profile" type="button" aria-label="Profil Dr. R. Daniswara">
+                    <span class="profile-avatar"><i class="fas fa-user-tie"></i></span>
+                    <span><strong>Dr. R. Daniswara</strong><small>Analis Kebijakan &amp;<br>Perencana Kota</small></span>
+                    <i class="fas fa-chevron-down profile-chevron"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="analytics-main">
+        <div class="report-shell">
+            <section class="analytics-heading">
+                <div class="analytics-title-row">
+                    <div>
+                        <div class="analytics-eyebrow"><span>SISTEM INTELIJEN KEBIJAKAN</span><i></i> Live diperbarui: 12 menit lalu</div>
+                        <h1>Dasbor Pemantauan Spasial &amp; Analitik Kebijakan Wilayah</h1>
+                        <p>Agregasi real-time aspirasi warga, evaluasi kepatuhan SLA dinas, serta analisis korelasi penyerapan anggaran publik.</p>
+                    </div>
+                    <div class="analytics-actions">
+                        <button class="analytics-action-button" id="exportAnalytics" type="button"><i class="fas fa-download"></i> Ekspor Dataset Terbuka (CSV/API)</button>
+                        <button class="analytics-action-button is-dark" id="printAnalytics" type="button"><i class="far fa-file-pdf"></i> Unduh Laporan Eksekutif (PDF)</button>
+                    </div>
+                </div>
+                <div class="analytics-filters" aria-label="Filter analisis">
+                    <strong><i class="fas fa-filter"></i> FILTER ANALISIS:</strong>
+                    <label><i class="fas fa-calendar-days"></i><select aria-label="Periode analisis"><option>Kuartal III 2026 (Juli - September)</option><option>Kuartal II 2026 (April - Juni)</option><option>Kuartal I 2026 (Januari - Maret)</option></select></label>
+                    <label><i class="fas fa-city"></i><select aria-label="Tingkat wilayah"><option>Tingkat Kota &amp; Kecamatan (DKI &amp; Penyangga)</option><option>Tingkat Kota</option><option>Tingkat Kecamatan</option></select></label>
+                    <label><i class="fas fa-layer-group"></i><select aria-label="Sektor analisis"><option>Semua Sektor (Infrastruktur, Sosial, Lingkungan)</option><option>Infrastruktur</option><option>Sosial</option><option>Lingkungan</option></select></label>
+                    <span class="analytics-verified"><i class="fas fa-certificate"></i> Data Terverifikasi Bappeda &amp; Diskominfo</span>
+                </div>
+            </section>
+
+            <section class="analytics-kpis" aria-label="Indikator kinerja utama">
+                <article class="analytics-kpi">
+                    <div class="analytics-kpi-head"><span>INDEKS RESPON PELAYANAN (IRP)</span><i class="fas fa-gauge-high"></i></div>
+                    <div class="analytics-kpi-value">88.4<small> / 100</small></div>
+                    <div class="analytics-kpi-foot"><span class="positive"><i class="fas fa-arrow-trend-up"></i> 4.2% QoQ</span><span class="pill-green">Kategori Prima</span></div>
+                </article>
+                <article class="analytics-kpi">
+                    <div class="analytics-kpi-head"><span>TINGKAT KEPATUHAN SLA DINAS</span><i class="fas fa-stopwatch"></i></div>
+                    <div class="analytics-kpi-value">91.8<small>% <span>(Target 90%)</span></small></div>
+                    <div class="analytics-kpi-foot"><span>2.810 Selesai Tepat Waktu</span><span>dari 3.061 total</span></div>
+                </article>
+                <article class="analytics-kpi">
+                    <div class="analytics-kpi-head"><span>FREKUENSI ADUAN KRITIS / 10K WARGA</span><i class="fas fa-triangle-exclamation"></i></div>
+                    <div class="analytics-kpi-value">14.2<small> aduan</small></div>
+                    <div class="analytics-kpi-foot"><span class="positive"><i class="fas fa-arrow-trend-down"></i> 8.5% YoY</span><span>Terendah: Jakpus (9.1)</span></div>
+                </article>
+                <article class="analytics-kpi">
+                    <div class="analytics-kpi-head"><span>KORELASI BELANJA APBD VS ISU</span><i class="fas fa-chart-simple"></i></div>
+                    <div class="analytics-kpi-value analytics-correlation">r = -0.74</div>
+                    <div class="analytics-kpi-foot"><span>Signifikan (p &lt; 0.01)</span><span class="pill-green">Efektif Kuat</span></div>
+                </article>
+            </section>
+
+            <section class="analytics-primary-grid">
+                <article class="analytics-panel spatial-panel">
+                    <div class="analytics-panel-heading">
+                        <div><h2><i class="fas fa-map-location-dot"></i> Peta Tematik Spasial Beban Masalah Wilayah</h2><p>Visualisasi spasial zonasi respon dan tingkat kerentanan infrastruktur per kecamatan.</p></div>
+                        <span class="analytics-tag">GIS CHOROPLETH</span>
+                    </div>
+                    <div class="spatial-toolbar" role="group" aria-label="Lapisan data peta">
+                        <button class="is-selected" type="button">Indeks Respon</button><button type="button">Isu Kritis</button><button type="button">Ketepatan SLA</button><button type="button">APBD / Kapita</button>
+                    </div>
+                    <div class="spatial-map">
+                        <div class="map-zoom-controls"><button type="button" aria-label="Perbesar peta">+</button><button type="button" aria-label="Perkecil peta">−</button><button type="button" aria-label="Atur ulang peta"><i class="fas fa-expand"></i></button></div>
+                        <svg class="jakarta-choropleth" viewBox="0 0 760 370" role="img" aria-label="Peta tematik ilustratif wilayah DKI Jakarta">
+                            <defs><pattern id="map-grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#22364d" stroke-width="1"/></pattern></defs>
+                            <rect width="760" height="370" fill="#101d30"/><rect width="760" height="370" fill="url(#map-grid)" opacity=".55"/>
+                            <path d="M55 93 155 79 183 122 163 176 69 164Z" fill="#087e79" stroke="#d7f0ec" stroke-width="2"/>
+                            <path d="m183 122 127 4 24 61-71 48-100-59Z" fill="#106d68" stroke="#d7f0ec" stroke-width="2"/>
+                            <path d="m334 187 97-25 60 43-16 82-116 5-96-57Z" fill="#a96b12" stroke="#f3e5c4" stroke-width="2"/>
+                            <path d="m310 126 116-7 54 46-49 22-97 25-24-61Z" fill="#087e79" stroke="#d7f0ec" stroke-width="2"/>
+                            <path d="m475 205 87-24 47 50-32 73-102-17Z" fill="#075f5c" stroke="#d7f0ec" stroke-width="2"/>
+                            <path d="M50 54 604 322M125 38 674 258M76 298 655 92" fill="none" stroke="#50627a" stroke-width="1" stroke-dasharray="5 6" opacity=".7"/>
+                            <g fill="#eaf4f5" font-family="Plus Jakarta Sans, sans-serif" text-anchor="middle"><text x="114" y="126" font-size="12">Jakarta Utara</text><text x="244" y="168" font-size="12">Jakarta Pusat</text><text x="385" y="164" font-size="12">Jakarta Timur</text><text x="383" y="244" font-size="12">Jakarta Barat</text><text x="524" y="261" font-size="12">Jakarta Selatan</text><text x="668" y="333" fill="#8fa0b5" font-size="10">Kota Depok / Bogor</text></g>
+                            <g fill="#32d3be" stroke="#fff" stroke-width="2"><circle cx="238" cy="142" r="6"/><circle cx="262" cy="133" r="7"/><circle cx="293" cy="152" r="5"/><circle cx="421" cy="157" r="6"/></g>
+                            <circle cx="521" cy="265" r="11" fill="none" stroke="#ff615f" stroke-width="3"/><circle cx="521" cy="265" r="4" fill="#ff615f"/>
+                        </svg>
+                        <div class="map-region-card"><div class="map-region-card-title"><i class="fas fa-triangle-exclamation"></i><span>Kecamatan Cilandak</span><b>ZONA PERHATIAN</b></div><div class="map-region-card-stats"><span>Skor Indeks Layanan<strong>72.4 <em>(-6.1)</em></strong></span><span>Total Laporan Aktif<strong>128 <em>Total SLA</em></strong></span></div><small>ISU DOMINAN TERVERIFIKASI: <b>43%</b></small><strong class="map-issue">1. Kerusakan Saluran Drainase</strong><div class="map-issue-bar"><i></i></div><strong class="map-issue">2. Jalan Berlubang &amp; Aspal Ambles</strong><p><i class="fas fa-lightbulb"></i> Rekomendasi Alokasi: Penambahan Regu tanggap cepat Dinas SDA &amp; percepatan SPK pemeliharaan.</p><button type="button">Buka Berkas Audit Cilandak</button></div>
+                        <div class="map-legend"><strong>TINGKAT KETEPATAN &amp; KUALITAS</strong><span><i class="legend-prime"></i> Prima (&gt;80%)</span><span><i class="legend-alert"></i> Waspada (65-80%)</span><span><i class="legend-critical"></i> Kritis (&lt;65%)</span></div>
+                    </div>
+                </article>
+
+                <aside class="analytics-panel insight-panel">
+                    <div class="analytics-panel-heading"><div><h2><i class="fas fa-brain"></i> AI Executive Insight</h2></div><span class="analytics-tag">MULTI-VARIAT</span></div>
+                    <p class="insight-intro">Rangkuman generatif dari deteksi anomali, komparasi anomali lapangan dan serapan APBD.</p>
+                    <article class="insight-note note-danger"><h3>Disparitas SDA Jakarta Timur <i class="fas fa-exclamation"></i></h3><p>Terjadi lonjakan <b>+38%</b> aduan genangan air di 3 kecamatan, padahal serapan anggaran normalisasi baru 41%.</p><strong>Rekomendasi: Realokasi prioritas lelang darurat Q4.</strong></article>
+                    <article class="insight-note note-teal"><h3>Efisiensi Smart Merge AI <i class="fas fa-wand-magic-sparkles"></i></h3><p>Penggabungan 412 laporan duplikat menghemat 310 jam kerja verifikator dan menurunkan backlog dinas sebesar <b>24%</b>.</p></article>
+                    <article class="insight-note note-blue"><h3>Sentimen Positif di Jaksel <i class="far fa-face-smile"></i></h3><p>Penyelesaian program penambalan jalan 48 jam meningkatkan kepuasan warga sebesar <b>+12 poin</b> di Cilandak-Kebayoran Baru.</p></article>
+                    <button class="insight-brief-button" id="printInsight" type="button"><i class="far fa-file-lines"></i> Buat Ringkasan Eksekutif untuk Rapat Pimpinan</button>
+                </aside>
+            </section>
+
+            <section class="analytics-secondary-grid">
+                <article class="analytics-panel performance-panel">
+                    <div class="analytics-panel-heading">
+                        <div><h2>Matriks Kinerja &amp; Benchmarking Wilayah Administratif</h2><p>Evaluasi SLA dinas teknis pelaksana dalam penanganan tiket aduan Musrenbang.</p></div>
+                        <a href="#performance-table">Lihat Rincian 44 Kecamatan <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="analytics-table-wrap" id="performance-table">
+                        <table class="analytics-table">
+                            <thead><tr><th>Wilayah administratif</th><th>Total tiket masuk</th><th>Rata-rata durasi respon</th><th>% kepatuhan SLA</th><th>Status performa</th></tr></thead>
+                            <tbody>
+                                <tr><td><i class="table-dot dot-green"></i>Kepulauan Seribu</td><td>142 Aduan</td><td>8.2 Jam</td><td><b class="sla-value sla-good">96.0%</b></td><td><span class="status-chip status-good">PRIMA</span></td></tr>
+                                <tr><td><i class="table-dot dot-green"></i>Jakarta Selatan</td><td>845 Aduan</td><td>14.6 Jam</td><td><b class="sla-value sla-good">94.1%</b></td><td><span class="status-chip status-good">PRIMA</span></td></tr>
+                                <tr><td><i class="table-dot dot-orange"></i>Jakarta Timur</td><td>1.104 Aduan</td><td>22.4 Jam</td><td><b class="sla-value sla-warn">89.5%</b></td><td><span class="status-chip status-warn">EFEKTIF</span></td></tr>
+                                <tr><td><i class="table-dot dot-orange"></i>Jakarta Barat</td><td>628 Aduan</td><td>26.1 Jam</td><td><b class="sla-value sla-warn">87.2%</b></td><td><span class="status-chip status-warn">EFEKTIF</span></td></tr>
+                                <tr><td><i class="table-dot dot-red"></i>Jakarta Utara</td><td>512 Aduan</td><td>34.8 Jam</td><td><b class="sla-value sla-low">82.6%</b></td><td><span class="status-chip status-low">ATENSI</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+                <div class="analytics-side-stack">
+                    <article class="analytics-panel correlation-panel">
+                        <div class="analytics-panel-heading"><div><h2>Korelasi Serapan vs Keluhan</h2><p>Penurunan volume aduan ketika realisasi belanja fisik mencapai target.</p></div><span>2024 (Jan - Sep)</span></div>
+                        <div class="chart-legend"><span><i class="legend-budget"></i>Belanja APBD (Miliar Rp)</span><span><i class="legend-complaints"></i>Volume Aduan Warga</span></div>
+                        <div class="correlation-chart" role="img" aria-label="Grafik perbandingan serapan anggaran dan jumlah aduan warga">
+                            <div class="chart-y-labels"><span>100</span><span>75</span><span>50</span><span>25</span></div>
+                            <div class="chart-plot">
+                                <div class="chart-gridlines"><i></i><i></i><i></i><i></i></div>
+                                <div class="budget-bars"><span style="--bar-height:48%"></span><span style="--bar-height:62%"></span><span style="--bar-height:72%"></span><span style="--bar-height:85%"></span><span style="--bar-height:94%"></span><span style="--bar-height:100%"></span></div>
+                                <svg viewBox="0 0 420 150" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,32 84,62 168,84 252,93 336,116 420,129" fill="none" stroke="#e34245" stroke-width="3"/><g fill="#e34245"><circle cx="0" cy="32" r="4"/><circle cx="84" cy="62" r="4"/><circle cx="168" cy="84" r="4"/><circle cx="252" cy="93" r="4"/><circle cx="336" cy="116" r="4"/><circle cx="420" cy="129" r="4"/></g></svg>
+                                <div class="chart-x-labels"><span>Mei</span><span>Jun</span><span>Jul</span><span>Ags</span><span>Sep</span><span>Okt (Proy)</span></div>
+                            </div>
+                        </div>
+                        <div class="chart-summary"><span>Efektivitas Belanja Dinas Bina Marga &amp; SDA:</span><b>Tinggi (88%)</b></div>
+                    </article>
+                    <article class="integration-card"><i class="fas fa-landmark"></i><div><strong>Integrasi Musrenbang 2025</strong><span>1.420 data aspirasi siap diekspor ke SIPD Kemendagri</span></div><i class="fas fa-arrows-rotate"></i></article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer analytics-footer">
+        <div class="container"><div class="footer-bottom"><p>&copy; 2026 WargaLapor. Hak cipta dilindungi.</p><span>Data analitik ditampilkan sebagai simulasi demonstrasi.</span></div></div>
+    </footer>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>

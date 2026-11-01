@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparansi APBD — WargaLapor</title>
+    <meta name="description" content="Pantau realisasi anggaran daerah, proyek pembangunan, dan korelasinya dengan kebutuhan warga melalui WargaLapor.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/apbd.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="apbd-page">
+    <div class="report-utility">
+        <div class="report-shell utility-content">
+            <span><i class="fas fa-landmark"></i> Portal terpadu akuntabilitas &amp; analitik kebijakan publik Republik Indonesia</span>
+            <span class="utility-status"><i class="fas fa-circle"></i> Sistem pelayanan pengaduan nasional aktif <span class="utility-id">ID: RI-GOV-2025</span></span>
+        </div>
+    </div>
+    <nav class="navbar report-navbar" id="navbar" aria-label="Navigasi utama">
+        <div class="report-shell navbar-content">
+            <a href="index.html" class="navbar-brand" aria-label="WargaLapor — Beranda">
+                <div class="brand-icon"><i class="fas fa-shield-halved"></i></div>
+                <span class="home-brand-copy"><span class="brand-text">Warga<span class="brand-accent">Lapor</span></span><small>Suara Publik<br> Civic Platform</small></span>
+            </a>
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Beranda</a></li>
+                <li><a href="laporan.html" class="nav-link">Laporan</a></li>
+                <li><a href="laporan.html#form" class="nav-link">Penanganan</a></li>
+                <li><a href="data-insight.html" class="nav-link">Analitik</a></li>
+                <li><a href="apbd.html" class="nav-link active" aria-current="page">Transparansi APBD</a></li>
+            </ul>
+            <div class="navbar-actions home-nav-actions report-nav-actions">
+                <label class="home-region-control"><i class="fas fa-location-dot"></i><span><small>Wilayah pantauan</small><select aria-label="Pilih wilayah pantauan"><option>Provinsi DKI Jakarta</option><option>Jakarta Selatan</option><option>Jakarta Pusat</option><option>Jakarta Timur</option></select></span><i class="fas fa-chevron-down"></i></label>
+                <a class="report-emergency home-emergency" href="tel:112"><i class="fas fa-phone"></i><span>Call center 112<small>Pengaduan aktif</small></span></a>
+                <button class="home-notifications" type="button" aria-label="Notifikasi, 4 belum dibaca"><i class="far fa-bell"></i><span>4</span></button>
+                <button class="home-profile" type="button" aria-label="Profil Dr. R. Daniswara">
+                    <span class="profile-avatar"><i class="fas fa-user-tie"></i></span>
+                    <span><strong>Dr. R. Daniswara</strong><small>Analis Kebijakan &amp;<br>Perencana Kota</small></span>
+                    <i class="fas fa-chevron-down profile-chevron"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="apbd-main">
+        <div class="report-shell">
+            <section class="apbd-intro">
+                <div class="apbd-title-group">
+                    <div class="apbd-eyebrow"><span><i class="fas fa-scale-balanced"></i> MODUL AKUNTABILITAS FISKAL DAERAH</span><span>SIKD-APBD Terpadu v4.8</span></div>
+                    <h1>Portal Transparansi APBD &amp; Korelasi Pembangunan</h1>
+                    <p>Audit publik realisasi anggaran, penyerapan sektoral, dan korelasi penanganan isu warga terhadap kesejahteraan daerah berbasis open-data real-time.</p>
+                </div>
+                <div class="apbd-actions">
+                    <button class="apbd-button" id="exportApbd" type="button"><i class="fas fa-download"></i> Unduh Rekap APBD Lengkap (CSV)</button>
+                    <button class="apbd-button apbd-button-dark" id="printApbd" type="button"><i class="far fa-file-pdf"></i> Ekspor Berkas Musrenbang 2025 (PDF)</button>
+                </div>
+                <form class="apbd-filters" id="apbdFilters">
+                    <label class="apbd-filter-field"><span>TAHUN ANGGARAN &amp; SIKLUS</span><span class="apbd-select-wrap"><i class="fas fa-calendar-days"></i><select id="apbdYear" aria-label="Tahun anggaran"><option value="2024">Tahun Anggaran 2024 (Realisasi Berjalan Q1-Q3)</option><option value="2025">Tahun Anggaran 2025 (Proyeksi)</option><option value="2023">Tahun Anggaran 2023 (Audit)</option></select></span></label>
+                    <label class="apbd-filter-field"><span>SEKTOR BELANJA PRIORITAS</span><span class="apbd-select-wrap"><i class="fas fa-layer-group"></i><select id="apbdSector" aria-label="Sektor belanja"><option value="all">Semua Sektor Vital (Infrastruktur, Lingkungan, Sosial)</option><option value="infrastruktur">Infrastruktur</option><option value="lingkungan">Lingkungan</option><option value="mobilitas">Mobilitas</option><option value="sosial">Sosial</option></select></span></label>
+                    <label class="apbd-filter-field"><span>WILAYAH ADMINISTRASI / WILAYAH UJI</span><span class="apbd-select-wrap"><i class="fas fa-map"></i><select id="apbdRegion" aria-label="Wilayah administrasi"><option value="all">Seluruh Wilayah DKI Jakarta &amp; Kawasan Penyangga</option><option value="selatan">Jakarta Selatan</option><option value="timur">Jakarta Timur</option><option value="barat">Jakarta Barat</option><option value="pusat">Jakarta Pusat</option></select></span></label>
+                    <div class="apbd-filter-buttons"><button class="apbd-reset" type="reset"><i class="fas fa-rotate-left"></i> Reset</button><button class="apbd-apply" type="submit"><i class="fas fa-sliders"></i> Terapkan Filter</button></div>
+                </form>
+            </section>
+
+            <section class="apbd-kpis" aria-label="Ringkasan anggaran">
+                <article class="apbd-kpi"><div class="apbd-kpi-label">TOTAL PAGU APBD 2024 <i class="fas fa-money-check-dollar"></i></div><div class="apbd-kpi-value">Rp 81,71 T</div><div class="apbd-kpi-foot"><span>Perda No. 7/2023</span><b>+4.1% vs APBD-P 2023</b></div></article>
+                <article class="apbd-kpi"><div class="apbd-kpi-label">REALISASI SERAPAN ANGGARAN <i class="fas fa-circle-notch"></i></div><div class="apbd-kpi-value">Rp 58,42 T <small>71.5%</small></div><div class="apbd-kpi-foot"><span>Target Q3: 70.0%</span><b>Tercapai Sehat</b></div><div class="apbd-progress"><i style="width:71.5%"></i></div></article>
+                <article class="apbd-kpi"><div class="apbd-kpi-label">BELANJA MODAL &amp; FISIK <i class="fas fa-screwdriver-wrench"></i></div><div class="apbd-kpi-value">Rp 14,28 T <small>78.4%</small></div><div class="apbd-kpi-foot"><span>Efisiensi Audit Inspektorat</span><b>98.2% Optimal</b></div><div class="apbd-progress"><i style="width:78.4%"></i></div></article>
+                <article class="apbd-kpi"><div class="apbd-kpi-label">RASIO BELANJA PER KAPITA <i class="fas fa-people-group"></i></div><div class="apbd-kpi-value">Rp 7,42 jt <small>/jiwa</small></div><div class="apbd-kpi-foot"><span>Indeks Keadilan Alokasi</span><b>+6.2% YoY (Berkeadilan)</b></div></article>
+            </section>
+
+            <section class="apbd-sector-section">
+                <div class="apbd-section-heading"><div><span>AUDIT REALISASI &amp; KINERJA PELAYANAN</span><h2>Breakdown 4 Sektor Vital Pelayanan Warga</h2></div><div class="apbd-chart-legend"><span><i class="legend-plan"></i>Pagu Total</span><span><i class="legend-actual"></i>Serapan Aktual</span></div></div>
+                <div class="apbd-sector-grid">
+                    <article class="sector-card" data-sector-card="infrastruktur"><div class="sector-card-heading"><span>INFRASTRUKTUR JALAN</span><b>82.1% Serapan</b></div><h3>Dinas Bina Marga</h3><div class="sector-budget"><span>Pagu: Rp 5,20 T</span><strong>Aktual: Rp 4,27 T</strong></div><div class="sector-progress"><i style="width:82.1%"></i></div><div class="sector-impact"><span>Aduan Tertangani: <b>2.810 Kasus</b></span><span>Penurunan Aduan Jalan: <b class="impact-good">-34.0%</b></span></div></article>
+                    <article class="sector-card" data-sector-card="lingkungan"><div class="sector-card-heading"><span>BANJIR &amp; DRAINASE</span><b>74.3% Serapan</b></div><h3>Dinas Sumber Daya Air</h3><div class="sector-budget"><span>Pagu: Rp 4,80 T</span><strong>Aktual: Rp 3,56 T</strong></div><div class="sector-progress"><i style="width:74.3%"></i></div><div class="sector-impact"><span>Aduan Tertangani: <b>1.940 Kasus</b></span><span>Reduksi Titik Genangan: <b class="impact-good">-26.0%</b></span></div></article>
+                    <article class="sector-card" data-sector-card="lingkungan"><div class="sector-card-heading"><span>SAMPAH &amp; SANITASI</span><b>69.8% Serapan</b></div><h3>Dinas Lingkungan Hidup</h3><div class="sector-budget"><span>Pagu: Rp 3,90 T</span><strong>Aktual: Rp 2,72 T</strong></div><div class="sector-progress"><i style="width:69.8%"></i></div><div class="sector-impact"><span>Aduan Tertangani: <b>3.420 Kasus</b></span><span>Efisiensi Pengangkutan: <b class="impact-good">91.0% Rute</b></span></div></article>
+                    <article class="sector-card" data-sector-card="mobilitas"><div class="sector-card-heading"><span>MOBILITAS &amp; KESELAMATAN</span><b>78.5% Serapan</b></div><h3>Dinas Perhubungan</h3><div class="sector-budget"><span>Pagu: Rp 2,80 T</span><strong>Aktual: Rp 2,14 T</strong></div><div class="sector-progress"><i style="width:78.5%"></i></div><div class="sector-impact"><span>Aduan Tertangani: <b>1.150 Kasus</b></span><span>Ketepatan Fasilitas: <b class="impact-good">93.0% Lalin</b></span></div></article>
+                </div>
+            </section>
+
+            <section class="apbd-analysis-grid">
+                <article class="apbd-panel correlation-panel">
+                    <div class="apbd-panel-heading"><div><h2><i class="fas fa-chart-line"></i> Korelasi Belanja Pemeliharaan Wilayah vs Penurunan Keluhan Publik</h2><p>Pearson Correlation Index: <b>r = -0.74 (Signifikan, p &lt; 0.01)</b>. Setiap peningkatan alokasi Rp 100 ribu/jiwa berkorelasi dengan penurunan 14 aduan kritis.</p></div><span class="apbd-highlight">Korelasi Negatif Kuat</span></div>
+                    <div class="scatter-meta"><span>Sumbu Y: Jumlah Aduan Infrastruktur Kritis (per 10.000 Penduduk)</span><span>Wilayah Kecamatan Terpetakan (24 Sampel Aktif)</span></div>
+                    <div class="scatter-chart" role="img" aria-label="Grafik korelasi belanja pemeliharaan dan jumlah keluhan warga">
+                        <div class="scatter-y-labels"><span>120</span><span>80</span><span>50</span><span>20</span></div>
+                        <svg viewBox="0 0 760 260" preserveAspectRatio="none" aria-hidden="true">
+                            <g class="scatter-grid"><path d="M56 20H740M56 78H740M56 136H740M56 194H740M56 252H740"/></g>
+                            <path class="scatter-axis" d="M56 18V252H740"/>
+                            <path class="scatter-trend" d="M85 42L718 229"/>
+                            <g class="scatter-point critical"><circle cx="142" cy="61" r="8"/><text x="142" y="46">Cengkareng</text></g>
+                            <g class="scatter-point critical"><circle cx="208" cy="86" r="10"/><text x="208" y="72">Tanjung Priok</text></g>
+                            <g class="scatter-point"><circle cx="287" cy="112" r="6"/><text x="287" y="99">Pulogadung</text></g>
+                            <g class="scatter-point"><circle cx="365" cy="132" r="7"/></g>
+                            <g class="scatter-point"><circle cx="438" cy="158" r="6"/><text x="438" y="145">Cilandak</text></g>
+                            <g class="scatter-point"><circle cx="512" cy="178" r="8"/><text x="512" y="165">Kebayoran Baru</text></g>
+                            <g class="scatter-point"><circle cx="610" cy="207" r="8"/><text x="610" y="194">Gambir</text></g>
+                        </svg>
+                    </div>
+                    <div class="scatter-axis-labels"><span>Rp 150 rb / Jiwa (Rendah)</span><span>Sumbu X: Realisasi Belanja Pemeliharaan Jalan per Kapita</span><span>Rp 850 rb / Jiwa (Tinggi)</span></div>
+                    <div class="scatter-legend"><span><i></i>Zona Efisiensi Intervensi Tinggi (Keluhan Menurun Signifikan)</span><span><i></i>Zona Kritis: Membutuhkan Intervensi Alokasi Musrenbang Segera</span></div>
+                </article>
+                <aside class="apbd-side-column">
+                    <article class="apbd-panel macro-panel">
+                        <div class="apbd-panel-heading"><div><h2><i class="fas fa-chart-simple"></i> Indikator Kesejahteraan Makro</h2><p>Dampak langsung belanja APBD yang divalidasi dengan aduan warga dan terselesaikan secara tuntas.</p></div></div>
+                        <div class="macro-indicator"><div><span>Indeks Kepuasan Masyarakat (IKM)</span><b>+4.8 Poin</b></div><strong>86.4 <small>/100 (Kategori Sangat Baik)</small></strong><p>Survei Terbuka 48.000 Responden Terverifikasi NIK</p></div>
+                        <div class="macro-indicator"><div><span>Indeks Kualitas Lingkungan Hidup (IKLH)</span><small>Standar KLHK</small></div><strong>68.2 <small>/100 (Sedang-Baik)</small></strong><p>Peningkatan kualitas sanitasi dan tata kelola TPS 3R</p></div>
+                        <div class="macro-indicator"><div><span>Waktu Tempuh Rata-rata Komuter</span><b>-11 Menit</b></div><strong>34 Menit <small>/ Koridor Utama</small></strong><p>Efek penataan 42 titik bottle-neck &amp; crossing drainase mulus</p></div>
+                    </article>
+                    <article class="apbd-recommendation"><span><i class="fas fa-circle-check"></i> REKOMENDASI MUSRENBANG 2025</span><h3>Prioritaskan Re-Alokasi Rp 180 Miliar</h3><p>Berdasarkan matriks korelasi, wilayah Tanjung Priok dan Cengkareng memerlukan injeksi belanja operasional pemeliharaan jalan mikro 2.4x lebih besar pada RKPD tahun mendatang.</p></article>
+                </aside>
+            </section>
+
+            <section class="apbd-panel project-catalog">
+                <div class="apbd-panel-heading catalog-heading"><div><span>AUDIT PENGADAAN TERBUKA &amp; MUSRENBANG</span><h2>Katalog Paket Proyek Strategis Daerah Terkorelasi Aduan Warga</h2></div><div class="catalog-controls"><label><i class="fas fa-search"></i><input id="projectSearch" type="search" placeholder="Cari nomor tender / nama proyek..." aria-label="Cari proyek"></label><button id="projectFilterButton" type="button"><i class="fas fa-filter"></i> Filter</button></div></div>
+                <div class="project-table-wrap">
+                    <table class="project-table">
+                        <thead><tr><th>Kode paket proyek</th><th>Pekerjaan &amp; lokasi</th><th>Pelaksana / kontraktor</th><th>Pagu / nilai kontrak</th><th>Fisik vs keuangan</th><th>Tautan aduan terkait</th><th>Audit BPK / status</th></tr></thead>
+                        <tbody id="projectTableBody">
+                            <tr data-sector="infrastruktur" data-region="selatan"><td><b class="project-code">#PJ-DBM-2024-0418</b></td><td><strong>Rehabilitasi Berkala Aspal Jalan TB Simatupang</strong><small>Kecamatan Cilandak, Jakarta Selatan (4.2 Km)</small></td><td><strong>PT Adhi Karya (Persero)</strong><small>Tbk<br>Tender LPSE Terbuka</small></td><td><strong>Rp 18,45 Miliar</strong><small>Pagu: Rp 19,80 M (Hemat 6.8%)</small></td><td><strong>Fisik: 94%</strong><strong>Keu: 88%</strong><div class="project-progress"><i style="width:88%"></i></div></td><td><span class="project-link"><i class="fas fa-link"></i> 412 Laporan Terkait</span></td><td><span class="project-status status-complete"><i class="fas fa-circle-check"></i> WTP - Selesai Uji</span></td></tr>
+                            <tr data-sector="lingkungan" data-region="barat"><td><b class="project-code">#SDA-DRN-2024-0192</b></td><td><strong>Pembangunan Crossing Saluran Kolam Retensi Rawa Buaya</strong><small>Kecamatan Cengkareng, Jakarta Barat</small></td><td><strong>PT Jaya Konstruksi MP</strong><small>Tbk<br>Tender LPSE Terbuka</small></td><td><strong>Rp 24,10 Miliar</strong><small>Pagu: Rp 25,00 M (Hemat 3.6%)</small></td><td><strong>Fisik: 78%</strong><strong>Keu: 70%</strong><div class="project-progress"><i style="width:70%"></i></div></td><td><span class="project-link"><i class="fas fa-link"></i> 628 Laporan Terkait</span></td><td><span class="project-status status-audit"><i class="fas fa-hourglass-half"></i> Proses Audit Lapangan</span></td></tr>
+                            <tr data-sector="mobilitas" data-region="pusat"><td><b class="project-code">#DLH-TPS-2024-0089</b></td><td><strong>Pengadaan Armada Truk Kompaktor Sampah Ramah Lingkungan</strong><small>Distribusi 5 Wilayah Kota Administrasi (60 Unit)</small></td><td><strong>PT Hino Motors Sales Indonesia</strong><small>E-Katalog LKPP Nasional</small></td><td><strong>Rp 42,60 Miliar</strong><small>Pagu: Rp 44,00 M (Hemat 3.1%)</small></td><td><strong>Fisik: 100%</strong><strong>Keu: 100%</strong><div class="project-progress"><i style="width:100%"></i></div></td><td><span class="project-link"><i class="fas fa-link"></i> 1.215 Laporan Terkait</span></td><td><span class="project-status status-complete"><i class="fas fa-circle-check"></i> WTP - BAST Terbit</span></td></tr>
+                            <tr data-sector="infrastruktur" data-region="timur"><td><b class="project-code">#DSH-TRF-2024-0311</b></td><td><strong>Integrasi Sistem Sensor Lampu Lalu Lintas Cerdas (ATCS AI)</strong><small>38 Persimpangan Padat Jakarta Timur &amp; Jakarta Utara</small></td><td><strong>PT Lintas Arta</strong><small>(Persero)<br>Sinergi BUMN Strategis</small></td><td><strong>Rp 12,80 Miliar</strong><small>Pagu: Rp 13,20 M (Hemat 3.0%)</small></td><td><strong>Fisik: 85%</strong><strong>Keu: 80%</strong><div class="project-progress"><i style="width:80%"></i></div></td><td><span class="project-link"><i class="fas fa-link"></i> 340 Laporan Terkait</span></td><td><span class="project-status status-verify"><i class="fas fa-circle-check"></i> WTP - Tahap Verifikasi</span></td></tr>
+                        </tbody>
+                    </table>
+                    <p class="project-empty" id="projectEmpty" hidden>Tidak ada paket proyek yang cocok dengan filter.</p>
+                </div>
+                <div class="catalog-footer"><span id="projectCount">Menampilkan 4 paket proyek terdaftar</span><span><i class="fas fa-shield-halved"></i> Semua dokumen kontrak terbuka sesuai UU KIP No. 14/2008</span><div class="catalog-pagination"><button type="button" disabled>Sebelumnya</button><button class="current" type="button" aria-current="page">1</button><button type="button" disabled>Selanjutnya</button></div></div>
+            </section>
+            <p class="apbd-demo-note">Data angka dan proyek pada dasbor ini merupakan simulasi untuk demonstrasi UI, bukan data APBD resmi.</p>
+        </div>
+    </main>
+    <footer class="footer apbd-footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 WargaLapor. Hak cipta dilindungi.</p><span>Transparansi anggaran untuk semua.</span></div></div></footer>
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="js/main.js"></script>
+    <script src="js/apbd.js"></script>
+</body>
+</html>

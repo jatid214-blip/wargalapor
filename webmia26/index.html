@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WargaLapor — Platform Pelaporan & Akuntabilitas Publik</title>
+    <meta name="description" content="Platform pelaporan masyarakat untuk infrastruktur rusak, dugaan penyimpangan, dan isu lingkungan. Terintegrasi dengan sistem verifikasi dan tindak lanjut.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="home-dashboard-page">
+    <div class="report-utility home-utility">
+        <div class="container utility-content">
+            <span><i class="fas fa-landmark"></i> Portal terpadu akuntabilitas &amp; analitik kebijakan publik Republik Indonesia</span>
+            <span class="utility-status"><i class="fas fa-circle"></i> Sistem pelayanan pengaduan nasional aktif <span class="utility-id">ID: RI-GOV-2025</span></span>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar home-navbar" id="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="navbar-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <span class="home-brand-copy"><span class="brand-text">Warga<span class="brand-accent">Lapor</span></span><small>Suara Publik<br> Civic Platform</small></span>
+            </a>
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Beranda</a></li>
+                <li><a href="laporan.html" class="nav-link">Laporan</a></li>
+                <li><a href="laporan.html#form" class="nav-link">Penanganan</a></li>
+                <li><a href="data-insight.html" class="nav-link">Analitik</a></li>
+                <li><a href="data-insight.html" class="nav-link">Transparansi APBD</a></li>
+            </ul>
+            <div class="navbar-actions home-nav-actions">
+                <label class="home-region-control"><i class="fas fa-location-dot"></i><span><small>Wilayah pantauan</small><select id="navbarRegion" aria-label="Pilih wilayah pantauan"><option>Provinsi DKI Jakarta</option><option>Jakarta Selatan</option><option>Jakarta Pusat</option><option>Jakarta Timur</option></select></span><i class="fas fa-chevron-down"></i></label>
+                <a href="tel:112" class="home-emergency">
+                    <i class="fas fa-phone"></i><span>Call center 112<small>Pengaduan aktif</small></span>
+                </a>
+                <button class="home-notifications" type="button" aria-label="Notifikasi, 4 belum dibaca"><i class="far fa-bell"></i><span>4</span></button>
+                <button class="home-profile" type="button" aria-label="Profil Dr. R. Daniswara">
+                    <span class="profile-avatar"><i class="fas fa-user-tie"></i></span>
+                    <span><strong>Dr. R. Daniswara</strong><small>Analis Kebijakan &amp;<br>Perencana Kota</small></span>
+                    <i class="fas fa-chevron-down profile-chevron"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge"><span><i class="fas fa-bolt"></i> Respon cepat &lt; 24 jam</span><span><i class="fas fa-shield-halved"></i> Terverifikasi NIK &amp; SP4N-LAPOR!</span><span><i class="fas fa-landmark"></i> Terintegrasi Data APBD 2025</span></div>
+                <h1 class="hero-title">
+                    Suara Warga untuk Pembangunan Kota
+                    <span class="text-gradient">Transparan & Akuntabel</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Sampaikan laporan, pantau realisasi anggaran, dan kawal kebijakan publik secara langsung berbasis data terbuka dan respon terukur di wilayah aglomerasi DKI Jakarta.
+                </p>
+                <div class="hero-search">
+                    <div class="search-box home-search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="search" placeholder="Cari isu, ID tiket (#JKT-...), atau jalan..." id="heroSearch" aria-label="Cari laporan, tiket, atau jalan">
+                        <label class="hero-select"><span>Kategori Masalah</span><select id="heroCategory" aria-label="Kategori masalah"><option value="all">Semua Kategori</option><option value="infrastruktur">Infrastruktur</option><option value="lingkungan">Lingkungan</option><option value="pelayanan">Pelayanan Publik</option></select></label>
+                        <label class="hero-select"><span>Wilayah Pemda</span><select id="heroRegion" aria-label="Pilih wilayah"><option value="all">Semua Kota/Kab.</option><option>Jakarta Pusat</option><option>Jakarta Timur</option></select></label>
+                        <button class="btn btn-primary" id="heroSearchButton"><i class="fas fa-arrow-right"></i> Cari Isu</button>
+                    </div>
+                </div>
+                <div class="hero-popular"><strong>Paling dicari:</strong><a href="#feed">#JalanCilangkap</a><a href="#feed">#LubangSudirman</a><a href="#feed">#AnggaranSampah</a></div>
+                <div class="hero-actions">
+                    <a href="#form" class="btn btn-primary"><i class="fas fa-circle-plus"></i> Buat Laporan Baru</a>
+                    <a href="#map" class="btn btn-outline"><i class="fas fa-compass"></i> Lihat Peta Isu Real-time</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Flow Section -->
+    <section class="section process-section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Akuntabilitas Berbasis Bukti</span>
+                <h2 class="section-title">Alur Transparansi Resolusi Warga</h2>
+                <p class="section-desc">Setiap aduan dikonversi menjadi mandat resmi dinas dengan sistem tiket yang dapat ditelusuri.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card" data-step="1">
+                    <div class="process-icon"><i class="fas fa-file-circle-check"></i></div>
+                    <div class="process-connector"></div>
+                    <h3>Laporan Masuk &amp; Verifikasi AI</h3>
+                    <p>Sistem memvalidasi NIK pelapor via Dukcapil, memindai geotag gambar, serta menggabungkan laporan serupa dalam radius 50 meter.</p>
+                </div>
+                <div class="process-card" data-step="2">
+                    <div class="process-icon">
+                        <i class="fas fa-building-circle-check"></i>
+                    </div>
+                    <div class="process-connector"></div>
+                    <h3>Tindak Lanjut &amp; Pengerahan Lapangan</h3>
+                    <p>Penerbitan Surat Perintah Kerja (SPK) digital ke dinas teknis (Bina Marga, SDA, Dishub) dengan batas waktu SLA yang dapat dipantau.</p>
+                </div>
+                <div class="process-card" data-step="3">
+                    <div class="process-icon">
+                        <i class="fas fa-file-circle-check"></i>
+                    </div>
+                    <div class="process-connector"></div>
+                    <h3>BAP Digital &amp; Audit Terbuka</h3>
+                    <p>Pekerjaan dinyatakan selesai setelah warga mengunggah foto geotag before &amp; after terverifikasi untuk penerimaan BAP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-file-lines"></i></div>
+                    <div class="stat-number" data-target="42890">42.890</div>
+                    <div class="stat-label">Total Laporan Masuk</div>
+                    <div class="stat-trend up"><i class="fas fa-arrow-trend-up"></i> +1.420 minggu ini</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <div class="stat-number" data-target="1240">1.240</div>
+                    <div class="stat-label">Sedang Ditangani Regu</div>
+                    <div class="stat-trend up"><i class="fas fa-clock"></i> 68 armada aktif di lapangan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-check-double"></i></div>
+                    <div class="stat-number" data-target="39815">39.815</div>
+                    <div class="stat-label">Selesai &amp; BAP Sah</div>
+                    <div class="stat-trend up"><i class="fas fa-arrow-trend-up"></i> 94,2% patuh batas SLA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number" data-target="2" data-suffix=".4 Jam">2.4 Jam</div>
+                    <div class="stat-label">Rata-rata Respon Awal</div>
+                    <div class="stat-trend up"><i class="fas fa-arrow-trend-up"></i> &lt; 65 menit lebih cepat dari 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feed Section -->
+    <section class="section feed-section" id="feed">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Keterbukaan Aduan Publik</span>
+                <h2 class="section-title">Feed Aduan Warga & Resolusi Nyata</h2>
+                <p class="section-desc">Pantau aduan warga dan tindak lanjut instansi secara terbuka dan terukur.</p>
+            </div>
+            <div class="feed-filters">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="baru">Baru</button>
+                <button class="filter-btn" data-filter="proses">Dalam Proses</button>
+                <button class="filter-btn" data-filter="selesai">Terselesaikan</button>
+                <button class="filter-btn" data-filter="urgent">Urgent</button>
+            </div>
+            <div class="feed-grid" id="feedGrid">
+                <!-- Card 1 -->
+                <div class="feed-card" data-status="proses" data-category="infrastruktur">
+                    <div class="feed-card-image">
+                        <img src="assets/img/report-1.jpg" alt="Jalan perkotaan di Jakarta sebagai foto ilustrasi laporan infrastruktur" loading="lazy">
+                        <span class="feed-status status-proses">Dalam Proses</span>
+                        <span class="feed-category">Infrastruktur</span>
+                    </div>
+                    <div class="feed-card-body">
+                        <div class="feed-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Jl. Sudirman, Jakarta Pusat</span>
+                            <span><i class="fas fa-clock"></i> 2 jam lalu</span>
+                        </div>
+                        <h3 class="feed-title">Jalan Berlubang Membahayakan Pengendara di Kawasan Sudirman</h3>
+                        <p class="feed-excerpt">Lubang berdiameter 50cm dan kedalaman 15cm sudah ada selama 3 bulan. Sudah menyebabkan 2 kecelakaan minor...</p>
+                        <div class="feed-footer">
+                            <div class="feed-author">
+                                <div class="avatar">WS</div>
+                                <span>Warga Sudirman</span>
+                            </div>
+                            <div class="feed-engagement">
+                                <span><i class="fas fa-thumbs-up"></i> 234</span>
+                                <span><i class="fas fa-comment"></i> 45</span>
+                            </div>
+                        </div>
+                        <div class="feed-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <span class="progress-text">Progres: 65%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feed-card" data-status="selesai" data-category="lingkungan">
+                    <div class="feed-card-image">
+                        <img src="assets/img/report-2.jpg" alt="Burung air di perairan Teluk Jakarta dengan sampah terapung, foto ilustrasi lingkungan" loading="lazy">
+                        <span class="feed-status status-selesai">Terselesaikan</span>
+                        <span class="feed-category">Lingkungan</span>
+                    </div>
+                    <div class="feed-card-body">
+                        <div class="feed-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kali Ciliwung, Jakarta Timur</span>
+                            <span><i class="fas fa-clock"></i> 5 jam lalu</span>
+                        </div>
+                        <h3 class="feed-title">Penumpukan Sampah di Bantaran Kali Ciliwung Berhasil Dibersihkan</h3>
+                        <p class="feed-excerpt">Timbunan sampah sepanjang 200 meter telah dibersihkan oleh Dinas Lingkungan Hidup bersama komunitas peduli lingkungan...</p>
+                        <div class="feed-footer">
+                            <div class="feed-author">
+                                <div class="avatar bg-green">KL</div>
+                                <span>Komunitas Lingkungan</span>
+                            </div>
+                            <div class="feed-engagement">
+                                <span><i class="fas fa-thumbs-up"></i> 512</span>
+                                <span><i class="fas fa-comment"></i> 89</span>
+                            </div>
+                        </div>
+                        <div class="feed-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill complete" style="width: 100%"></div>
+                            </div>
+                            <span class="progress-text">Selesai ✓</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feed-card" data-status="baru" data-category="pelayanan">
+                    <div class="feed-card-image">
+                        <img src="assets/img/report-3.jpg" alt="Kegiatan warga dan transportasi di Jakarta, foto ilustrasi" loading="lazy">
+                        <span class="feed-status status-baru">Baru</span>
+                        <span class="feed-category">Pelayanan Publik</span>
+                    </div>
+                    <div class="feed-card-body">
+                        <div class="feed-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kelurahan Menteng, Jakarta Pusat</span>
+                            <span><i class="fas fa-clock"></i> 8 jam lalu</span>
+                        </div>
+                        <h3 class="feed-title">Pelayanan Terhambat: Pengurusan KTP Melebihi Batas Waktu SLA</h3>
+                        <p class="feed-excerpt">Pengurusan e-KTP yang seharusnya selesai dalam 14 hari kerja sudah memasuki minggu ke-6 tanpa kejelasan status...</p>
+                        <div class="feed-footer">
+                            <div class="feed-author">
+                                <div class="avatar bg-orange">RM</div>
+                                <span>Rudi Menteng</span>
+                            </div>
+                            <div class="feed-engagement">
+                                <span><i class="fas fa-thumbs-up"></i> 178</span>
+                                <span><i class="fas fa-comment"></i> 34</span>
+                            </div>
+                        </div>
+                        <div class="feed-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 10%"></div>
+                            </div>
+                            <span class="progress-text">Menunggu Verifikasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="feed-card" data-status="urgent" data-category="lingkungan">
+                    <div class="feed-card-image">
+                        <img src="assets/img/report-4.jpg" alt="Saluran Banjir Timur di Cipinang Muara, Jakarta, foto ilustrasi" loading="lazy">
+                        <span class="feed-status status-urgent">Urgent</span>
+                        <span class="feed-category">Lingkungan</span>
+                    </div>
+                    <div class="feed-card-body">
+                        <div class="feed-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Cipinang Muara, Jakarta Timur</span>
+                            <span><i class="fas fa-clock"></i> 1 hari lalu</span>
+                        </div>
+                        <h3 class="feed-title">Pemantauan Saluran Banjir Timur untuk Mencegah Genangan di Cipinang Muara</h3>
+                        <p class="feed-excerpt">Kondisi saluran dan bantaran perlu dipantau untuk menjaga kapasitas aliran air menjelang musim hujan...</p>
+                        <div class="feed-footer">
+                            <div class="feed-author">
+                                <div class="avatar bg-red">PT</div>
+                                <span>Pedestrian Thamrin</span>
+                            </div>
+                            <div class="feed-engagement">
+                                <span><i class="fas fa-thumbs-up"></i> 891</span>
+                                <span><i class="fas fa-comment"></i> 156</span>
+                            </div>
+                        </div>
+                        <div class="feed-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill urgent" style="width: 30%"></div>
+                            </div>
+                            <span class="progress-text">Progres: 30%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feed-actions">
+                <a href="laporan.html" class="btn btn-outline btn-lg">
+                    <i class="fas fa-list"></i> Lihat Semua Laporan
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section" id="map">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pemetaan Spasial Komprehensif</span>
+                <h2 class="section-title">Peta Hotspot & Telemetri Penyelesaian DKI</h2>
+                <p class="section-desc">Pantau hotspot laporan dan telemetri penyelesaian di seluruh wilayah DKI Jakarta.</p>
+            </div>
+            <div class="map-container">
+                <div class="map-sidebar">
+                    <div class="map-legend">
+                        <h4><i class="fas fa-circle-info"></i> Legenda</h4>
+                        <div class="legend-item">
+                            <span class="legend-dot red"></span>
+                            <span>Hotspot Tinggi (>50 laporan)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot orange"></span>
+                            <span>Hotspot Sedang (20-50 laporan)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot yellow"></span>
+                            <span>Hotspot Rendah (5-20 laporan)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot green"></span>
+                            <span>Aman (<5 laporan)</span>
+                        </div>
+                    </div>
+                    <div class="map-stats-sidebar">
+                        <h4><i class="fas fa-chart-pie"></i> Distribusi Wilayah</h4>
+                        <div class="region-stat">
+                            <div class="region-info">
+                                <span>Jakarta Pusat</span>
+                                <span class="region-count">892</span>
+                            </div>
+                            <div class="region-bar"><div class="region-fill" style="width:85%"></div></div>
+                        </div>
+                        <div class="region-stat">
+                            <div class="region-info">
+                                <span>Jakarta Utara</span>
+                                <span class="region-count">654</span>
+                            </div>
+                            <div class="region-bar"><div class="region-fill" style="width:65%"></div></div>
+                        </div>
+                        <div class="region-stat">
+                            <div class="region-info">
+                                <span>Jakarta Barat</span>
+                                <span class="region-count">541</span>
+                            </div>
+                            <div class="region-bar"><div class="region-fill" style="width:55%"></div></div>
+                        </div>
+                        <div class="region-stat">
+                            <div class="region-info">
+                                <span>Jakarta Selatan</span>
+                                <span class="region-count">478</span>
+                            </div>
+                            <div class="region-bar"><div class="region-fill" style="width:48%"></div></div>
+                        </div>
+                        <div class="region-stat">
+                            <div class="region-info">
+                                <span>Jakarta Timur</span>
+                                <span class="region-count">725</span>
+                            </div>
+                            <div class="region-bar"><div class="region-fill" style="width:72%"></div></div>
+                        </div>
+                    </div>
+                    <a href="peta.html" class="btn btn-primary btn-block">
+                        <i class="fas fa-map-location-dot"></i> Buka Peta Lengkap
+                    </a>
+                </div>
+                <div class="map-wrapper" id="mapContainer">
+                    <div class="map-placeholder">
+                        <div class="map-interactive" id="interactiveMap">
+                            <!-- Interactive SVG Map of Jakarta -->
+                            <svg viewBox="0 0 800 500" class="jakarta-map">
+                                <!-- Background -->
+                                <rect width="800" height="500" fill="#e8f4f8" rx="12"/>
+                                
+                                <!-- Water bodies -->
+                                <path d="M0 0 L800 0 L800 80 Q600 120 400 90 Q200 60 0 100 Z" fill="#b3d9e8" opacity="0.5"/>
+                                
+                                <!-- Jakarta Utara -->
+                                <path class="map-region" id="jakut" d="M150 80 Q250 60 400 70 Q550 80 650 90 L640 180 Q500 190 350 185 Q200 180 160 170 Z" fill="#ff6b6b" opacity="0.7" data-region="Jakarta Utara" data-count="654"/>
+                                
+                                <!-- Jakarta Barat -->
+                                <path class="map-region" id="jakbar" d="M100 150 L160 170 Q200 180 250 185 L240 300 Q180 310 120 290 Q80 270 90 200 Z" fill="#ffa94d" opacity="0.7" data-region="Jakarta Barat" data-count="541"/>
+                                
+                                <!-- Jakarta Pusat -->
+                                <path class="map-region" id="jakpus" d="M250 185 Q350 185 450 190 L440 290 Q350 300 260 295 L240 300 Z" fill="#ff6b6b" opacity="0.85" data-region="Jakarta Pusat" data-count="892"/>
+                                
+                                <!-- Jakarta Timur -->
+                                <path class="map-region" id="jaktim" d="M450 190 Q550 180 640 180 L680 310 Q600 340 500 320 Q460 310 440 290 Z" fill="#ffa94d" opacity="0.7" data-region="Jakarta Timur" data-count="725"/>
+                                
+                                <!-- Jakarta Selatan -->
+                                <path class="map-region" id="jaksel" d="M240 300 L260 295 Q350 300 440 290 L500 320 Q450 380 350 400 Q250 390 180 350 Q120 310 120 290 Z" fill="#ffd43b" opacity="0.7" data-region="Jakarta Selatan" data-count="478"/>
+                                
+                                <!-- Hotspot dots -->
+                                <circle cx="350" cy="230" r="12" fill="#ff0000" opacity="0.6" class="pulse-dot"/>
+                                <circle cx="350" cy="230" r="6" fill="#ff0000"/>
+                                
+                                <circle cx="500" cy="250" r="10" fill="#ff6b00" opacity="0.6" class="pulse-dot"/>
+                                <circle cx="500" cy="250" r="5" fill="#ff6b00"/>
+                                
+                                <circle cx="200" cy="220" r="8" fill="#ffa500" opacity="0.6" class="pulse-dot"/>
+                                <circle cx="200" cy="220" r="4" fill="#ffa500"/>
+                                
+                                <circle cx="400" cy="140" r="9" fill="#ff4444" opacity="0.6" class="pulse-dot"/>
+                                <circle cx="400" cy="140" r="5" fill="#ff4444"/>
+                                
+                                <circle cx="300" cy="350" r="7" fill="#44bb44" opacity="0.6" class="pulse-dot"/>
+                                <circle cx="300" cy="350" r="4" fill="#44bb44"/>
+                                
+                                <!-- Region Labels -->
+                                <text x="400" y="130" text-anchor="middle" class="map-label">Jakarta Utara</text>
+                                <text x="170" y="230" text-anchor="middle" class="map-label">Jakarta Barat</text>
+                                <text x="350" y="250" text-anchor="middle" class="map-label-bold">Jakarta Pusat</text>
+                                <text x="560" y="260" text-anchor="middle" class="map-label">Jakarta Timur</text>
+                                <text x="320" y="360" text-anchor="middle" class="map-label">Jakarta Selatan</text>
+                            </svg>
+                            
+                            <!-- Tooltip -->
+                            <div class="map-tooltip" id="mapTooltip">
+                                <h5 id="tooltipRegion">Jakarta Pusat</h5>
+                                <p id="tooltipCount">892 Laporan</p>
+                                <p id="tooltipResolved">Terselesaikan: 78%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Form Section -->
+    <section class="section form-section" id="form">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Partisipasi Aktif Masyarakat</span>
+                <h2 class="section-title">Formulir Pengaduan Cepat Warga</h2>
+                <p class="section-desc">Identitas NIK Anda terjamin melalui enkripsi end-to-end bersertifikasi BSSN. Laporan Anda langsung menerbitkan tiket audit publik.</p>
+            </div>
+            <div class="form-container">
+                <div class="form-sidebar-info">
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <h4>Respon Cepat</h4>
+                        <p>Rata-rata waktu respon pertama hanya 2 jam setelah laporan terverifikasi</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-lock"></i></div>
+                        <h4>Kerahasiaan Terjamin</h4>
+                        <p>Identitas pelapor dilindungi dan bisa memilih laporan anonim</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-bell"></i></div>
+                        <h4>Notifikasi Real-time</h4>
+                        <p>Dapatkan update progres laporan langsung ke email atau WhatsApp</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h4>Tracking Transparan</h4>
+                        <p>Pantau status laporan dari awal hingga terselesaikan</p>
+                    </div>
+                </div>
+                <form class="report-form" id="reportForm">
+                    <div class="form-group">
+                        <label for="reportName"><i class="fas fa-user"></i> Nama Lengkap Pelapor *</label>
+                        <input type="text" id="reportName" placeholder="Masukkan nama lengkap Anda" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reportEmail"><i class="fas fa-id-card"></i> NIK (Terenkripsi 256-bit) *</label>
+                            <input type="text" id="reportEmail" inputmode="numeric" pattern="[0-9]{16}" maxlength="16" placeholder="Masukkan 16 digit NIK" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportPhone"><i class="fas fa-map"></i> Kecamatan &amp; Kota Administrasi *</label>
+                            <input type="text" id="reportPhone" placeholder="Contoh: Cilandak, Jakarta Selatan" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reportCategory"><i class="fas fa-tag"></i> Kategori Laporan</label>
+                            <select id="reportCategory" required>
+                                <option value="">Pilih kategori...</option>
+                                <option value="infrastruktur">🏗️ Infrastruktur</option>
+                                <option value="lingkungan">🌿 Lingkungan</option>
+                                <option value="pelayanan">🏛️ Pelayanan Publik</option>
+                                <option value="anggaran">💰 Dugaan Penyimpangan Anggaran</option>
+                                <option value="keamanan">🛡️ Keamanan & Ketertiban</option>
+                                <option value="lainnya">📋 Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportUrgency"><i class="fas fa-exclamation-triangle"></i> Tingkat Urgensi</label>
+                            <select id="reportUrgency" required>
+                                <option value="">Pilih urgensi...</option>
+                                <option value="rendah">🟢 Rendah</option>
+                                <option value="sedang">🟡 Sedang</option>
+                                <option value="tinggi">🟠 Tinggi</option>
+                                <option value="kritis">🔴 Kritis</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportLocation"><i class="fas fa-map-marker-alt"></i> Alamat Lengkap &amp; Patokan Lokasi *</label>
+                        <input type="text" id="reportLocation" placeholder="Masukkan alamat lengkap atau koordinat GPS" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportTitle"><i class="fas fa-heading"></i> Ringkasan Judul Laporan *</label>
+                        <input type="text" id="reportTitle" placeholder="Ringkasan singkat masalah yang dilaporkan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reportDesc"><i class="fas fa-align-left"></i> Deskripsi / Kronologi Kejadian *</label>
+                        <textarea id="reportDesc" rows="5" placeholder="Jelaskan masalah secara detail: kapan terjadi, dampak yang dirasakan, dan upaya yang sudah dilakukan..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-camera"></i> Unggah Foto Bukti Fisik Lapangan (Otomatis Geotag GPS) *</label>
+                        <div class="file-upload" id="fileUpload">
+                            <i class="fas fa-camera"></i>
+                            <p>Klik untuk ambil foto atau unggah dari perangkat</p>
+                            <small>JPG atau PNG — geotag lokasi otomatis jika diizinkan</small>
+                            <input type="file" id="reportFiles" multiple accept="image/*,video/*" hidden>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="reportAnonymous">
+                        <label for="reportAnonymous">Laporkan secara anonim (identitas tidak ditampilkan publik)</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="reportAgree" required>
+                        <label for="reportAgree">Saya menyatakan laporan ini berdasarkan fakta dan bersedia bertanggung jawab</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitReport">
+                        <i class="fas fa-paper-plane"></i> Kirimkan Pengaduan Resmi (Terbitkan SPK Warga)
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Pillars Section -->
+    <section class="section pillars-section" id="pillars">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Ekosistem Tata Kelola</span>
+                <h2 class="section-title">3 Pilar Integrasi WargaLapor</h2>
+                <p class="section-desc">Transparansi layanan publik yang terhubung dari laporan hingga tindak lanjut.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon-wrap">
+                        <div class="pillar-icon">
+                            <i class="fas fa-users-gear"></i>
+                        </div>
+                    </div>
+                    <h3>Penanganan Dinas &amp; SLA Workstation</h3>
+                    <p>Meja kerja terpadu staf operasional dinas untuk menerbitkan SPK, memvalidasi foto geotag, serta mengesahkan BAP digital.</p>
+                    <ul class="pillar-features">
+                        <li><a href="laporan.html"><i class="fas fa-arrow-right"></i> Buka workstation</a></li>
+                    </ul>
+                </div>
+                <div class="pillar-card featured">
+                    <div class="pillar-badge">Pilar Utama</div>
+                    <div class="pillar-icon-wrap">
+                        <div class="pillar-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                    </div>
+                    <h3>Dasbor Analitik Eksekutif</h3>
+                    <p>Kecerdasan analitik untuk pimpinan daerah: indeks kepuasan warga, metrik performa tiap camat, dan prediksi hotspot bencana berbasis data.</p>
+                    <ul class="pillar-features">
+                        <li><a href="data-insight.html"><i class="fas fa-arrow-right"></i> Buka analitik</a></li>
+                    </ul>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon-wrap">
+                        <div class="pillar-icon">
+                            <i class="fas fa-scale-balanced"></i>
+                        </div>
+                    </div>
+                    <h3>Transparansi APBD &amp; Pembangunan</h3>
+                    <p>Korelasikan setiap penyelesaian aduan dengan titik proyek APBD dan efisiensi pengerjaan di lapangan untuk mendukung pengawasan publik.</p>
+                    <ul class="pillar-features">
+                        <li><a href="data-insight.html"><i class="fas fa-arrow-right"></i> Buka APBD terbuka</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Insight Preview Section -->
+    <section class="section insight-section" id="insight">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Data & Analitik</span>
+                <h2 class="section-title">Insight Berbasis Data untuk Keputusan Lebih Baik</h2>
+                <p class="section-desc">Membantu masyarakat dan pembuat kebijakan mengambil keputusan berdasarkan data yang akurat</p>
+            </div>
+            <div class="insight-grid">
+                <div class="insight-chart-card">
+                    <div class="chart-header">
+                        <h4><i class="fas fa-chart-bar"></i> Tren Laporan per Kategori</h4>
+                        <select class="chart-filter">
+                            <option>6 Bulan Terakhir</option>
+                            <option>1 Tahun</option>
+                            <option>Semua</option>
+                        </select>
+                    </div>
+                    <div class="chart-container" id="categoryChart">
+                        <div class="bar-chart">
+                            <div class="bar-group">
+                                <div class="bar-label">Infrastruktur</div>
+                                <div class="bar-wrapper">
+                                    <div class="bar" style="width: 85%" data-value="12,450">
+                                        <span class="bar-value">12,450</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-label">Lingkungan</div>
+                                <div class="bar-wrapper">
+                                    <div class="bar bar-green" style="width: 65%" data-value="9,320">
+                                        <span class="bar-value">9,320</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-label">Pelayanan</div>
+                                <div class="bar-wrapper">
+                                    <div class="bar bar-purple" style="width: 55%" data-value="7,890">
+                                        <span class="bar-value">7,890</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-label">Anggaran</div>
+                                <div class="bar-wrapper">
+                                    <div class="bar bar-orange" style="width: 40%" data-value="5,670">
+                                        <span class="bar-value">5,670</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar-label">Keamanan</div>
+                                <div class="bar-wrapper">
+                                    <div class="bar bar-red" style="width: 30%" data-value="4,230">
+                                        <span class="bar-value">4,230</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="insight-chart-card">
+                    <div class="chart-header">
+                        <h4><i class="fas fa-chart-pie"></i> Tingkat Penyelesaian</h4>
+                        <select class="chart-filter">
+                            <option>Bulan Ini</option>
+                            <option>Kuartal Ini</option>
+                            <option>Tahun Ini</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <div class="donut-chart-container">
+                            <div class="donut-chart">
+                                <svg viewBox="0 0 200 200" class="donut-svg">
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#e8ecf1" stroke-width="24"/>
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="var(--primary)" stroke-width="24" stroke-dasharray="376.8 125.6" stroke-dashoffset="0" transform="rotate(-90 100 100)" class="donut-segment"/>
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#ffa94d" stroke-width="24" stroke-dasharray="75.36 427.04" stroke-dashoffset="-376.8" transform="rotate(-90 100 100)" class="donut-segment"/>
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#ff6b6b" stroke-width="24" stroke-dasharray="50.24 452.16" stroke-dashoffset="-452.16" transform="rotate(-90 100 100)" class="donut-segment"/>
+                                </svg>
+                                <div class="donut-center">
+                                    <span class="donut-percent">75%</span>
+                                    <span class="donut-label">Terselesaikan</span>
+                                </div>
+                            </div>
+                            <div class="donut-legend">
+                                <div class="legend-row">
+                                    <span class="legend-color" style="background: var(--primary)"></span>
+                                    <span>Selesai (75%)</span>
+                                </div>
+                                <div class="legend-row">
+                                    <span class="legend-color" style="background: #ffa94d"></span>
+                                    <span>Proses (15%)</span>
+                                </div>
+                                <div class="legend-row">
+                                    <span class="legend-color" style="background: #ff6b6b"></span>
+                                    <span>Pending (10%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="insight-actions">
+                <a href="data-insight.html" class="btn btn-outline btn-lg">
+                    <i class="fas fa-chart-line"></i> Eksplorasi Data Selengkapnya
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Bantuan</span>
+                <h2 class="section-title">Pertanyaan Umum Warga (FAQ)</h2>
+                <p class="section-desc">Temukan jawaban untuk pertanyaan yang sering diajukan</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Bagaimana cara membuat laporan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Anda dapat membuat laporan dengan mengisi formulir di halaman ini atau klik tombol "Buat Laporan" di navigasi. Isi detail masalah, lampirkan foto/video sebagai bukti, dan tentukan lokasi kejadian. Laporan Anda akan langsung masuk ke sistem verifikasi kami.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Apakah identitas saya aman sebagai pelapor?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya, keamanan identitas pelapor adalah prioritas kami. Anda dapat memilih untuk melaporkan secara anonim. Data pribadi Anda dienkripsi dan hanya dapat diakses oleh tim verifikator yang berwenang. Kami mematuhi UU Perlindungan Data Pribadi.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Berapa lama waktu yang dibutuhkan untuk menindaklanjuti laporan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Setelah laporan terverifikasi, rata-rata waktu respon pertama adalah 2 jam kerja. Penyelesaian laporan bergantung pada kompleksitas masalah: masalah ringan 3-7 hari, sedang 7-14 hari, dan berat 14-30 hari. Anda dapat memantau progres secara real-time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Bagaimana proses verifikasi laporan dilakukan?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tim verifikator independen kami akan melakukan cross-check data, memverifikasi lokasi melalui GPS, dan jika diperlukan melakukan survei lapangan. Laporan yang lolos verifikasi akan diteruskan ke dinas terkait untuk ditindaklanjuti.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Apakah data laporan dapat digunakan oleh publik?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ya, data agregat dan insight dari laporan tersedia di halaman Data & Insight. Data ini dapat digunakan oleh masyarakat, peneliti, dan pembuat kebijakan untuk analisis dan pengambilan keputusan. Data individu pelapor tetap terlindungi.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Bagaimana cara memantau progres laporan saya?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Setelah mengirim laporan, Anda akan menerima nomor tracking unik. Gunakan nomor ini untuk memantau status di halaman Laporan. Anda juga akan mendapat notifikasi via email/WhatsApp setiap ada update progres.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Bersama Membangun Kota yang Lebih Baik</h2>
+                <p>Bergabunglah dengan ribuan warga yang sudah aktif berpartisipasi dalam pengawasan publik. Suaramu penting!</p>
+                <div class="cta-buttons">
+                    <a href="laporan.html#form" class="btn btn-white btn-lg">
+                        <i class="fas fa-paper-plane"></i> Buat Laporan Sekarang
+                    </a>
+                    <a href="data-insight.html" class="btn btn-outline-white btn-lg">
+                        <i class="fas fa-chart-line"></i> Eksplorasi Data
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="brand-icon"><i class="fas fa-shield-halved"></i></div>
+                        <span class="brand-text">Warga<span class="brand-accent">Lapor</span></span>
+                    </div>
+                    <p>Platform pelaporan masyarakat yang terintegrasi dengan sistem verifikasi dan tindak lanjut, mendorong partisipasi warga dalam pengawasan publik.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="laporan.html">Buat Laporan</a></li>
+                        <li><a href="laporan.html">Feed Laporan</a></li>
+                        <li><a href="peta.html">Peta Hotspot</a></li>
+                        <li><a href="data-insight.html">Data & Insight</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Informasi</h4>
+                    <ul>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Panduan Pelaporan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@wargalapor.id</li>
+                        <li><i class="fas fa-phone"></i> (021) 1234-5678</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WargaLapor. Hak cipta dilindungi. Dibangun untuk Indonesia yang lebih baik.</p>
+                <p class="photo-credits">Foto ilustrasi — bukan bukti kasus: <a href="https://commons.wikimedia.org/wiki/File:Jakarta_Outer_Ring_Road_street.jpg" target="_blank" rel="noopener noreferrer">Exynoss78739, Jalan Lingkar Luar Jakarta</a> (CC BY 4.0); <a href="https://commons.wikimedia.org/wiki/File:Bangau_di_Teluk_Jakarta.jpg" target="_blank" rel="noopener noreferrer">Arie Basuki, Bangau di Teluk Jakarta</a> (CC BY-SA 4.0); <a href="https://commons.wikimedia.org/wiki/File:Jakarta_Car_Free_Day.jpg" target="_blank" rel="noopener noreferrer">Gunawan Kartapranata, Jakarta Car Free Day</a> (CC BY-SA 3.0); <a href="https://commons.wikimedia.org/wiki/File:Jakarta_East_Flood_Canal,_Cipinang_Muara_Section,_June_2024.jpg" target="_blank" rel="noopener noreferrer">Irvan Ary Maulana, Kanal Banjir Timur</a> (CC BY-SA 4.0).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast notification -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
